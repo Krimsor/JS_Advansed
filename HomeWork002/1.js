@@ -18,41 +18,41 @@
 */
 
 class Library {
-   #books;
+    #books;
 
-   constructor(books) {
-      if (!Array.isArray(books)) {
-         throw Error("Список книг не массив");
-      }
-      if (arr => arr.filter((item, index) => arr.indexOf(item) !== index).length === 0) {
-         this.#books = books;
-      } else {
-         throw Error("В списке книг содержаться дубликаты");
-      }
-   };
+    constructor(books) {
+        if (!Array.isArray(books)) {
+            throw Error("Список книг не массив");
+        }
+        if (arr => arr.filter((item, index) => arr.indexOf(item) !== index).length === 0) {
+            this.#books = books;
+        } else {
+            throw Error("В списке книг содержаться дубликаты");
+        }
+    };
 
-   allBooks () {
-      return this.#books;
-   };
+    allBooks() {
+        return this.#books;
+    };
 
-   addBook (title) {
-      if (this.hasBook(title)) {
-         throw Error("Такая книга уже существует");
-      }
-      this.#books.push(title);
-   };
+    addBook(title) {
+        if (this.hasBook(title)) {
+            throw Error("Такая книга уже существует");
+        }
+        this.#books.push(title);
+    };
 
-   removeBook (title) {
-      if (!this.hasBook(title)) {
-         throw Error("Такая книга не существует");
-      }
-      const id = this.#books.findIndex(e => e === title);
-      this.#books.splice(id, 1);
-   };
+    removeBook(title) {
+        if (!this.hasBook(title)) {
+            throw Error("Такая книга не существует");
+        }
+        const id = this.#books.findIndex(e => e === title);
+        this.#books.splice(id, 1);
+    };
 
-   hasBook (title) {
-      return this.#books.includes(title);
-   }
+    hasBook(title) {
+        return this.#books.includes(title);
+    }
 }
 
 

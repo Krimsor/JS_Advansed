@@ -56,7 +56,7 @@ class Client {
 class Manager {
   finalOrder = new Map();
   count;
-  newOrder (client, ...order) {
+  newOrder(client, ...order) {
     this.count = 0
     order.forEach((element) => {
       if (menu.get(element.type).has(element.name)) {
